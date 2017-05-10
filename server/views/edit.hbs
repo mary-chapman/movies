@@ -1,0 +1,38 @@
+<form class="form" action="/movies/{{id}}?_method=PUT" method="post">
+  <!-- TITLE -->
+  <div class="form-group">
+    <label for="title" class="form-control">Title</label>
+    <input value="{{title}}" class="form-control" type="text" name="title" placeholder="enter movie title" />
+  </div>
+  <!-- RATING -->
+  <div class="form-group">
+    <label for="title" class="form-control">RATING</label>
+    <select value="{{rating}}" class="form-control" name="rating">
+      {{#select rating}}
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      {{/select}}
+    </select>
+  </div>
+  <!-- DESCRIPTION -->
+  <div class="form-group">
+    <label for="title" class="form-control">Description</label>
+    <textarea value="{{description}}" class="form-control" type="text" name="description" placeholder="enter a description"></textarea>
+  </div>
+  <!-- WATCHED -->
+  <div class="form-group">
+    Have you seen this movie?
+    {{#if watched}}
+      <label><input checked="checked" type="radio" name="watched" value="on">Yes</label>
+      <label><input type="radio" name="watched" value="off">No</label>
+    {{else}}
+      <label><input type="radio" name="watched" value="on">Yes</label>
+      <label><input checked="checked" type="radio" name="watched" value="off">No</label>
+    {{/if}}
+  </div>
+  <!-- SUBMIT BTN -->
+  <button type="submit" class="btn btn-success">UPDATE</button>
+</form>

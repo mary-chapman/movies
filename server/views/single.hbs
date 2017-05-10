@@ -1,0 +1,11 @@
+<h1>{{title}}</h1>
+<h3>Rating: {{rating}} stars</h3>
+{{#if description}}
+  <h3>Description: {{description}}</h3>
+{{/if}}
+<h3>Watched: {{watched}}</h3>
+
+<form class="form" action="/movies/{{id}}?_method=DELETE" method="post">
+  <a href="/movies/{{id}}/edit" type="button" class="btn btn-info">EDIT</a>
+  <button type="submit" class="btn btn-danger">DELETE</button>
+</form>
